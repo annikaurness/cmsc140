@@ -1,0 +1,130 @@
+/usr/local/bin/python3 /Users/annikaurness/introPythonWork/homework/peer_review2.py
+annikaurness@Annikas-MacBook-Air ~ % /usr/local/bin/python3 /Users/annikaurness/introPythonWork/homework/peer_review2.py
+Welcome to the Wild West Shootout!
+
+Training Room (Tutorial)
+Plano, Texas (Easy)
+Tuscon, Arizona (Medium)
+Las Vegas, Nevada (Hard)
+
+Select Difficulty: medium
+Not viable option. Try again
+
+Select Difficulty: Plano, Texas
+Not viable option. Try again
+
+Select Difficulty: Easy 
+Welcome to Plano, Texas!
+
+         1   |`|
+
+1 |`|    2   |`|
+
+2 |`|    3   |`|
+
+3 |`|    4   |`|
+
+         5   |`|
+
+Player 1, select the barrel you wish to hide behind: 1
+Player 1, select the barrel you wish to shoot at: 2
+         1   |`|
+
+1 o|`|   2 ->|`|
+
+2 |`|    3   |`|
+
+3 |`|    4   |`|
+
+         5   |`|
+
+
+Draw!
+
+                 1   |`|
+
+1 o|`|           2 ->|`|
+
+2 |`|            3   |`|o
+
+3 |`|<-                  4   |`|
+
+                 5   |`|
+
+Both players missed. Reload and try and again!
+         1   |`|
+
+1 |`|    2   |`|
+
+2 |`|    3   |`|
+
+3 |`|    4   |`|
+
+         5   |`|
+
+Player 1, select the barrel you wish to hide behind: 3
+Player 1, select the barrel you wish to shoot at: 4
+         1   |`|
+
+1 |`|    2   |`|
+
+2 |`|    3   |`|
+
+3 o|`|   4 ->|`|
+
+         5   |`|
+
+
+Draw!
+
+                 1   |`|
+
+1 |`|            2   |`|
+
+2 |`|            3   |`|
+
+3 o|`|<-                 4 ->|`|
+
+                 5   |`|o
+
+
+Game Over. You Lost.
+
+/usr/local/bin/python3 /Users/annikaurness/introPythonWork/homework/peer_review2.py
+annikaurness@Annikas-MacBook-Air ~ % /usr/local/bin/python3 /Users/annikaurness/introPythonWork/homework/peer_review2.py
+Welcome to the Wild West Shootout!
+
+Training Room (Tutorial)
+Plano, Texas (Easy)
+Tuscon, Arizona (Medium)
+Las Vegas, Nevada (Hard)
+
+Select Difficulty: Medium
+Welcome to Tuscon, Arizona!
+
+         1   |`|
+
+         2   |`|
+
+1 |`|    3   |`|
+
+2 |`|    4   |`|
+
+3 |`|    5   |`|
+
+         6   |`|
+
+         7   |`|
+
+Player 1, select the barrel you wish to hide behind: 6
+Traceback (most recent call last):
+  File "/Users/annikaurness/introPythonWork/homework/peer_review2.py", line 213, in <module>
+    medium()
+  File "/Users/annikaurness/introPythonWork/homework/peer_review2.py", line 35, in medium
+    playShootout()
+  File "/Users/annikaurness/introPythonWork/homework/peer_review2.py", line 123, in playShootout
+    p_board[(hide+j) - 1] = "o|`|"
+IndexError: list assignment index out of range
+annikaurness@Annikas-MacBook-Air ~ % 
+
+This is really cool! It would be helpful to specify what input you’re looking for from the user (ie Easy/Medium/Hard instead of the place and possibly clarify which barrels the user is hiding behind and which they’re shooting at). 
