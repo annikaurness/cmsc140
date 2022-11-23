@@ -7,14 +7,14 @@ def passwordGuesser(guesses):
     if user_min.isdigit() == False:
         print("That doesn't look like a number. Please try again.")
         user_min = input("Please enter a three digit number:")
-    if user_min > 599 or user_min < 100:
+    if int(user_min) > 599 or int(user_min) < 100:
         print("Please enter a three digit number between 100 and 599.")
         user_min = input("Try again: ")
     user_max = input("Please enter a three digit number higher than your previous number: ")
     if user_max.isdigit() == False:
         print("That doesn't look like a number. Please try again.")
         user_max = input("Please enter a three digit number higher than your previous number: ")
-    if user_max > 999 or user_max < user_min: 
+    if int(user_max) > 999 or int(user_max) < int(user_min): 
         print("Please enter a number between 600 and 999.")
         user_max = input("Try again: ")
 
@@ -67,12 +67,12 @@ def passwordGuesser(guesses):
             break
         elif int(user_guess) <= password+25 and int(user_guess) >= password-25:
                 print("Good guess.Your number is less than 25 greater or less than the password. But the real password's second digit is",int(pass_list[1])-int(user_list[1]), "more than the second digit in your guess.")
-                guess_counter-=1
-                print("Guesses left: ", guess_counter)
+                guesses-=1
+                print("Guesses left: ", guesses)
         else:
                 print("Not a bad guess. But the real password is at least 25 less or more, and the real second digit is", int(pass_list[1])-int(user_list[1]), "more than the second digit in your guess.")
-                guess_counter-=1
-                print("Guesses left: ", guess_counter)
+                guesses-=1
+                print("Guesses left: ", guesses)
 
         user_guess = input("Guess again: ")
         if user_guess.isdigit() == False:
@@ -81,7 +81,7 @@ def passwordGuesser(guesses):
         if int(user_guess) == password:
             print("Access granted.")
             break
-        if guess_counter == 0:
+        if guesses == 0:
             print("I'm sorry, you're out of guesses.")
             break
         elif int(user_guess[0]) == int(user_guess[1]) or int(user_guess[1]) == int(user_guess[2]) or int(user_guess[0]) == int(user_guess[2]) and pass_list[0]!= pass_list[1] and pass_list[1]!= pass_list[2] and pass_list[0]!= pass_list[2]: #error here
@@ -150,3 +150,5 @@ def passwordGuesser(guesses):
             user_guess = input()
 
 passwordGuesser(5)
+
+#fixed: changed all instances of "guess_counter" to "guesses", converted user min and max to int
